@@ -1,0 +1,57 @@
+Assignment:
+A working professional wants healthy South Indian meals to support weight loss. They are
+vegetarian, based in Tamil Nadu, and spend most of the day at an office desk. Your job is not to
+write the meal plan by hand - it is to write a well-structured prompt that makes an AI model
+produce the plan for you.
+
+
+prompt given:
+  
+act as a Certified Nutritionist
+Create a meal plan for 7 days
+I am Vegetarian and i am from Tamil Nadu and i am an office worker and weight-loss goal my goal and my current weight is 50 kilos
+Few Shots : a meal that covers all the necessary portion of carbs fibers and protien in a day
+provide me the response in a table format and row for each day 
+
+Response:
+
+Sure. One important point first: **50 kg alone doesn't tell us whether weight loss is appropriate**—your height, age, sex, activity level, and any medical considerations matter. So I’d frame this as a **balanced Tamil Nadu vegetarian meal plan**, with portions that can support healthy weight management rather than aggressive calorie restriction.
+
+| Day       | Breakfast                                  | Mid-morning               | Lunch                                                            | Evening snack                                   | Dinner                                    | Protein + fibre focus            |
+| --------- | ------------------------------------------ | ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------- | -------------------------------- |
+| **Day 1** | 2 idlis + 1 cup sambar + vegetable chutney | 1 guava                   | 1 cup brown/red rice + 1 cup sambar + poriyal + ½ cup curd       | Sundal (½–1 cup)                                | 2 chapatis + mixed-veg kurma + ½ cup curd | Dal + chana + curd + vegetables  |
+| **Day 2** | 2 vegetable dosas + sambar                 | 1 apple + 5 almonds       | 1 cup rice + keerai kootu + beans poriyal + rasam + curd         | Buttermilk + roasted chana                      | Vegetable oats upma + ½–1 cup paneer/tofu | Kootu + paneer/tofu + greens     |
+| **Day 3** | Vegetable pongal (1–1.5 cups) + sambar     | 1 orange                  | 1 cup rice + 1 cup keerai dal + cabbage poriyal + curd           | Sprouted green-gram sundal                      | 2 adai + vegetable sambar                 | Adai + dal + sprouts             |
+| **Day 4** | 2 ragi dosas + sambar + chutney            | 1 guava                   | 1 cup millet rice + vegetable kootu + poriyal + rasam + curd     | 1 cup boiled peanuts/chana                      | 2 chapatis + dal + mixed vegetables       | Ragi + dal + peanuts + curd      |
+| **Day 5** | 2–3 idlis + sambar + vegetable chutney     | 1 banana (small) + 5 nuts | 1 cup rice + rajma/chole curry + vegetable poriyal + curd        | Buttermilk + sundal                             | Vegetable dosa + sambar                   | Rajma/chole + dal + curd         |
+| **Day 6** | 2 adai + sambar + chutney                  | 1 seasonal fruit          | 1 cup red rice + mor kuzhambu + beans/carrot poriyal + ½ cup dal | Roasted chana + tea/coffee without excess sugar | 2 chapatis + tofu/paneer vegetable curry  | Adai + tofu/paneer + dal         |
+| **Day 7** | 2–3 vegetable uthappams + sambar           | Papaya (1 cup)            | 1 cup rice + sambar + avial + keerai + curd                      | Chana/peanut sundal                             | Vegetable soup + 2 chapatis + dal/tofu    | Sambar + dal + tofu + vegetables |
+
+### 🥗 Your "complete meal" formula
+
+Rather than trying to get **all carbs, fibre and protein in one meal**, aim to balance your **whole day**:
+
+**Each main meal:**
+
+* 🥦 **½ plate:** vegetables
+* 🍚 **¼ plate:** carbs — rice, millet, idli, dosa, chapati, etc.
+* 🫘 **¼ plate:** protein — dal, sambar, kootu, chana, rajma, sprouts, tofu, paneer
+* 🥛 Add **curd/buttermilk** where appropriate
+* 🥜 Small amount of nuts/seeds for healthy fats
+
+For a vegetarian trying to lose weight, **protein is particularly important** because it helps preserve muscle while you're losing weight.
+
+Also, don't eliminate rice or other carbohydrates. **Portion control + adequate protein + vegetables + regular activity** is generally more sustainable than a very low-carb diet.
+
+If you tell me your **height, age, sex, and typical daily activity/exercise**, I can make this into a more precise **7-day Tamil vegetarian weight-loss plan with calories, protein grams, and exact portions**.
+
+
+  | Day       | Breakfast                                  | Mid-morning               | Lunch                                                            | Evening snack                                   | Dinner                                    | Protein + fibre focus            |
+| --------- | ------------------------------------------ | ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------- | -------------------------------- |
+| **Day 1** | 2 idlis + 1 cup sambar + vegetable chutney | 1 guava                   | 1 cup brown/red rice + 1 cup sambar + poriyal + ½ cup curd       | Sundal (½–1 cup)                                | 2 chapatis + mixed-veg kurma + ½ cup curd | Dal + chana + curd + vegetables  |
+| **Day 2** | 2 vegetable dosas + sambar                 | 1 apple + 5 almonds       | 1 cup rice + keerai kootu + beans poriyal + rasam + curd         | Buttermilk + roasted chana                      | Vegetable oats upma + ½–1 cup paneer/tofu | Kootu + paneer/tofu + greens     |
+| **Day 3** | Vegetable pongal (1–1.5 cups) + sambar     | 1 orange                  | 1 cup rice + 1 cup keerai dal + cabbage poriyal + curd           | Sprouted green-gram sundal                      | 2 adai + vegetable sambar                 | Adai + dal + sprouts             |
+| **Day 4** | 2 ragi dosas + sambar + chutney            | 1 guava                   | 1 cup millet rice + vegetable kootu + poriyal + rasam + curd     | 1 cup boiled peanuts/chana                      | 2 chapatis + dal + mixed vegetables       | Ragi + dal + peanuts + curd      |
+| **Day 5** | 2–3 idlis + sambar + vegetable chutney     | 1 banana (small) + 5 nuts | 1 cup rice + rajma/chole curry + vegetable poriyal + curd        | Buttermilk + sundal                             | Vegetable dosa + sambar                   | Rajma/chole + dal + curd         |
+| **Day 6** | 2 adai + sambar + chutney                  | 1 seasonal fruit          | 1 cup red rice + mor kuzhambu + beans/carrot poriyal + ½ cup dal | Roasted chana + tea/coffee without excess sugar | 2 chapatis + tofu/paneer vegetable curry  | Adai + tofu/paneer + dal         |
+| **Day 7** | 2–3 vegetable uthappams + sambar           | Papaya (1 cup)            | 1 cup rice + sambar + avial + keerai + curd                      | Chana/peanut sundal                             | Vegetable soup + 2 chapatis + dal/tofu    | Sambar + dal + tofu + vegetables |
