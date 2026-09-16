@@ -1,0 +1,177 @@
+{
+  "name": "slack assignment",
+  "nodes": [
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C0C2EAWQNQZ",
+          "mode": "list",
+          "cachedResultName": "n8n-automation"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "256483da-8fc2-491e-9f61-3cf658c999be",
+      "name": "Slack Trigger",
+      "webhookId": "b5393be7-955d-4f83-b329-13ba14ccc5c8",
+      "credentials": {
+        "slackApi": {
+          "id": "JgRoJ7ouM5bEJESn",
+          "name": "Slack account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a helpful recipe ingredient assistant.\n\nThe user will provide a recipe name.\n\nIdentify the ingredients and products needed to prepare that recipe.\n\nInstructions:\n1. List the ingredients clearly and also add more emojis to make it colourful \n2. Include approximate quantities when reasonable.\n3. Group similar ingredients where helpful.\n4. Mention common optional ingredients separately.\n5. provide a clear recipe on how to prepare {{ $json.text }}\n6. If the recipe name is unclear, ask the user for clarification.\n7. Return a concise, Slack-friendly response.\n8. Do not provide lengthy cooking instructions unless requested.\n9.if you have options return the receipe for the options\nRecipe requested:\n{{ $json.text }}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        224,
+        0
+      ],
+      "id": "8d05ccd4-ce7f-4f7a-aa2a-5bbf35c2740e",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        208
+      ],
+      "id": "29be6b72-c9c9-4d71-92d8-41810368e6c5",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "pdKWy9ZsuX37cWVH",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0C2EAWQNQZ",
+          "mode": "list",
+          "cachedResultName": "n8n-automation"
+        },
+        "text": "={{ $json.text }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        1104,
+        80
+      ],
+      "id": "6411cf99-d890-495b-be51-1b4aeba59ed1",
+      "name": "Send a message",
+      "webhookId": "bcd32e0b-c876-43fd-910c-30009a51dab5",
+      "credentials": {
+        "slackApi": {
+          "id": "JgRoJ7ouM5bEJESn",
+          "name": "Slack account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = [];\n\nfor (const item of $input.all()) {\n  // 1. Extract the text from the previous LLM node\n  let rawText = item.json.text || \"\";\n\n  // 2. Handle any escaped newlines\n  let cleanedText = rawText.replace(/\\\\n/g, '\\n').trim();\n\n  // 3. Convert markdown dashes or asterisks to proper Slack bullet points (•)\n  // This looks for spaces/tabs followed by a dash or asterisk, then more spaces\n  cleanedText = cleanedText.replace(/^[ \\t]*[-*][ \\t]+/gm, '• ');\n\n  // 4. Output a clean JSON object containing the formatted text\n  results.push({\n    json: {\n      text: cleanedText\n    }\n  });\n}\n\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        736,
+        144
+      ],
+      "id": "99225b11-7000-41da-81dc-67e7694da6e4",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "401eb792-2c00-40f3-86ab-7b169e0e7fcb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "50bab3331663030387278b7ff8293a28b5d08fe5ce528cdfb77757d9e35970a3"
+  },
+  "nodeGroups": [],
+  "id": "aooW8ilMBQYj7nLq",
+  "tags": []
+}
